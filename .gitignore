@@ -1,0 +1,52 @@
+# Build directories
+build/
+*.o
+*.a
+*.so
+*.dylib
+*.dll
+*.exe
+
+# Qt files
+*.autosave
+*.user
+*.pro.user
+*.qmlc
+*.jsc
+Makefile*
+moc_*
+ui_*
+qrc_*
+*_plugin_import.cpp
+
+# Qt Creator
+*.autosave
+/.qmake.stash
+
+# Database
+data/database.db
+data/*.db
+data/*.sqlite
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+log.txt
+*.log
+
+# Exports
+data/exports/*
+data/exports/*
+
+# Avatars
+data/avatars/*
+!data/avatars/.gitkeep

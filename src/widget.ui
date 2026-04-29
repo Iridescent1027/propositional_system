@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Widget</class>
+ <widget class="QWidget" name="Widget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>900</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>离散数学命题系统</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <!-- 顶部标题 -->
+   <item>
+    <widget class="QLabel" name="titleLabel">
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="center"&gt;&lt;span style=" font-size:16pt; font-weight:600;"&gt;离散数学命题系统&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+   </item>
+   
+   <!-- 创建题目区域 -->
+   <item>
+    <widget class="QGroupBox" name="generateGroupBox">
+     <property name="title">
+      <string>题库操作</string>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QPushButton" name="createQuestionButton">
+        <property name="text">
+         <string>创建题目</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="showStatsButton">
+        <property name="text">
+         <string>显示统计</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   
+   <!-- 筛选区域 -->
+   <item>
+    <widget class="QGroupBox" name="filterGroupBox">
+     <property name="title">
+      <string>筛选题目</string>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <widget class="QLabel" name="filterTypeLabel">
+        <property name="text">
+         <string>按类型：</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="filterTypeComboBox">
+        <item>
+         <property name="text">
+          <string>全部类型</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="difficultyRangeLabel">
+        <property name="text">
+         <string>难度范围：</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSpinBox" name="minDifficultySpinBox">
+        <property name="minimum">
+         <number>1</number>
+        </property>
+        <property name="maximum">
+         <number>5</number>
+        </property>
+        <property name="value">
+         <number>1</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="toLabel">
+        <property name="text">
+         <string>-</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSpinBox" name="maxDifficultySpinBox">
+        <property name="minimum">
+         <number>1</number>
+        </property>
+        <property name="maximum">
+         <number>5</number>
+        </property>
+        <property name="value">
+         <number>5</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="filterDifficultyButton">
+        <property name="text">
+         <string>按难度筛选</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="knowledgePointsLabel">
+        <property name="text">
+         <string>知识点：</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="knowledgePointsLineEdit">
+        <property name="placeholderText">
+         <string>输入知识点</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="filterKnowledgePointsButton">
+        <property name="text">
+         <string>按知识点筛选</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="filterAllButton">
+        <property name="text">
+         <string>组合筛选</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="resetFilterButton">
+        <property name="text">
+         <string>重置筛选</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   
+   <!-- 主要内容区域 -->
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <!-- 题目列表 -->
+     <item>
+      <widget class="QListWidget" name="questionList">
+       <property name="minimumSize">
+        <size>
+         <width>300</width>
+         <height>400</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>400</width>
+         <height>16777215</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     
+     <!-- 题目详情 -->
+     <item>
+      <layout class="QVBoxLayout" name="detailsLayout">
+       <item>
+        <widget class="QLabel" name="idLabel">
+         <property name="text">
+          <string>题目ID:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="typeLabel">
+         <property name="text">
+          <string>类型:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="difficultyLabel">
+         <property name="text">
+          <string>难度:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="contentLabel">
+         <property name="text">
+          <string>题目内容：</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTextEdit" name="contentTextEdit">
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>100</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="answerLabel">
+         <property name="text">
+          <string>参考答案：</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTextEdit" name="answerTextEdit">
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>100</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="clearButton">
+         <property name="text">
+          <string>清空详情</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

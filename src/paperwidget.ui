@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PaperWidget</class>
+ <widget class="QWidget" name="PaperWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>试卷管理</string>
+  </property>
+  <layout class="QHBoxLayout" name="mainLayout">
+   <item>
+    <widget class="QGroupBox" name="paperListGroup">
+     <property name="title">
+      <string>试卷列表</string>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>300</width>
+       <height>0</height>
+      </size>
+     </property>
+     <layout class="QVBoxLayout" name="paperListLayout">
+      <item>
+       <widget class="QListWidget" name="paperList"/>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="aiButtonLayout">
+        <item>
+         <widget class="QPushButton" name="aiGenerateButton">
+          <property name="text">
+           <string>AI出题</string>
+          </property>
+          <property name="styleSheet">
+           <string>QPushButton {
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px;
+    border-radius: 3px;
+}
+QPushButton:hover {
+    background-color: #45a049;
+}</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QLabel" name="paperInfoLabel">
+        <property name="text">
+         <string>试卷信息</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="styleSheet">
+         <string>font-weight: bold;</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QFormLayout" name="paperDetailsLayout">
+        <item row="0" column="0">
+         <widget class="QLabel" name="titleLabel">
+          <property name="text">
+           <string>标题：</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLabel" name="titleValueLabel">
+          <property name="text">
+           <string>-</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="totalScoreLabel">
+          <property name="text">
+           <string>总分：</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLabel" name="totalScoreValueLabel">
+          <property name="text">
+           <string>-</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="statusLabel">
+          <property name="text">
+           <string>状态：</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QLabel" name="statusValueLabel">
+          <property name="text">
+           <string>-</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="paperButtonLayout">
+        <item>
+         <widget class="QPushButton" name="createButton">
+          <property name="text">
+           <string>新建试卷</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="editButton">
+          <property name="text">
+           <string>编辑</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="deleteButton">
+          <property name="text">
+           <string>删除</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QPushButton" name="exportButton">
+        <property name="text">
+         <string>导出PDF</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="questionsGroup">
+     <property name="title">
+      <string>试卷题目</string>
+     </property>
+     <layout class="QVBoxLayout" name="questionsLayout">
+      <item>
+       <widget class="QListWidget" name="paperQuestionsList"/>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="questionDetailGroup">
+        <property name="title">
+         <string>题目详情</string>
+        </property>
+        <property name="maximumHeight">
+         <number>300</number>
+        </property>
+        <layout class="QFormLayout" name="questionDetailLayout">
+         <item row="0" column="0">
+          <widget class="QLabel" name="questionIdLabel">
+           <property name="text">
+            <string>题目ID：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="questionIdValueLabel">
+           <property name="text">
+            <string>-</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="questionTypeLabel">
+           <property name="text">
+            <string>题型：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLabel" name="questionTypeValueLabel">
+           <property name="text">
+            <string>-</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="questionScoreLabel">
+           <property name="text">
+            <string>分值：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QLabel" name="questionScoreValueLabel">
+           <property name="text">
+            <string>-</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="questionDifficultyLabel">
+           <property name="text">
+            <string>难度：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QLabel" name="questionDifficultyValueLabel">
+           <property name="text">
+            <string>-</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="questionKnowledgePointsLabel">
+           <property name="text">
+            <string>知识点：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="QLabel" name="questionKnowledgePointsValueLabel">
+           <property name="text">
+            <string>-</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="0" colspan="2">
+          <widget class="QLabel" name="contentLabel">
+           <property name="text">
+            <string>题目内容：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="0" colspan="2">
+          <widget class="QTextEdit" name="contentTextEdit">
+           <property name="maximumHeight">
+            <number>100</number>
+           </property>
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="0" colspan="2">
+          <widget class="QLabel" name="answerLabel">
+           <property name="text">
+            <string>参考答案：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="8" column="0" colspan="2">
+          <widget class="QTextEdit" name="answerTextEdit">
+           <property name="maximumHeight">
+            <number>80</number>
+           </property>
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="questionButtonLayout">
+        <item>
+         <widget class="QPushButton" name="autoAssignButton">
+          <property name="text">
+           <string>智能选题</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="manualSelectButton">
+          <property name="text">
+           <string>自助选题</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="removeQuestionButton">
+          <property name="text">
+           <string>移除题目</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="editScoreButton">
+          <property name="text">
+           <string>修改分值</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

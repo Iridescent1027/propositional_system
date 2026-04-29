@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CreateQuestionDialog</class>
+ <widget class="QDialog" name="CreateQuestionDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>创建题目</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QGroupBox" name="basicInfoGroupBox">
+     <property name="title">
+      <string>基本信息</string>
+     </property>
+     <layout class="QFormLayout" name="formLayout">
+      <item row="0" column="0">
+       <widget class="QLabel" name="typeLabel">
+        <property name="text">
+         <string>题目类型：</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QComboBox" name="typeComboBox"/>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="difficultyLabel">
+        <property name="text">
+         <string>难度等级：</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QSpinBox" name="difficultySpinBox"/>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="knowledgePointsLabel">
+        <property name="text">
+         <string>知识点：</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLineEdit" name="knowledgePointsLineEdit">
+        <property name="placeholderText">
+         <string>多个知识点用逗号分隔，例如：命题逻辑,真值表</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="contentGroupBox">
+     <property name="title">
+      <string>题目内容</string>
+     </property>
+     <layout class="QVBoxLayout" name="contentLayout">
+      <item>
+       <widget class="QTextEdit" name="contentTextEdit">
+        <property name="placeholderText">
+         <string>请输入题目内容...</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="answerGroupBox">
+     <property name="title">
+      <string>参考答案</string>
+     </property>
+     <layout class="QVBoxLayout" name="answerLayout">
+      <item>
+       <widget class="QTextEdit" name="answerTextEdit">
+        <property name="placeholderText">
+         <string>请输入参考答案...</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="explanationGroupBox">
+     <property name="title">
+      <string>解析说明</string>
+     </property>
+     <layout class="QVBoxLayout" name="explanationLayout">
+      <item>
+       <widget class="QTextEdit" name="explanationTextEdit">
+        <property name="placeholderText">
+         <string>请输入题目解析（可选）...</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="aiGroupBox">
+     <property name="title">
+      <string>AI生成</string>
+     </property>
+     <layout class="QHBoxLayout" name="aiLayout">
+      <item>
+       <widget class="QLabel" name="aiCountLabel">
+        <property name="text">
+         <string>生成数量：</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSpinBox" name="aiCountSpinBox"/>
+      </item>
+      <item>
+       <widget class="QPushButton" name="aiGenerateButton">
+        <property name="text">
+         <string>AI生成题目</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Save</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
